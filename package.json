@@ -4,9 +4,12 @@
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write 'lib/**/*.{ts,js}'",
+    "build": "npm run tsc",
+    "clean": "rimraf ./dist",
+    "format": "prettier --write \"lib/**/*.{ts,js}\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "npm run clean && npm run lint && npm run format",
+    "test": "jest",
     "tsc": "tsc -p tsconfig.json",
     "tsc:watch": "npm run tsc -- --watch"
   },
@@ -35,6 +38,7 @@
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
+    "rimraf": "^2.6.3",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.17.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -55,9 +59,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all"
   }
 }
