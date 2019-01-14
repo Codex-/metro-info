@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "defaultSeverity": "error",
+  "rules": {
+    "await-promise": true,
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "only-arrow-functions": false,
+    "trailing-comma": {
+      "options": {
+        "multiline": "always",
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    },
+    "max-classes-per-file": false
+  }
+}
