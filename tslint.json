@@ -6,8 +6,25 @@
   ],
   "defaultSeverity": "error",
   "rules": {
+    "array-type": [
+      true,
+      "array-simple"
+    ],
     "await-promise": true,
     "interface-name": false,
+    "max-classes-per-file": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "instance-field",
+          "constructor",
+          "instance-method",
+          "static-method"
+        ]
+      }
+    ],
     "object-literal-sort-keys": false,
     "only-arrow-functions": false,
     "trailing-comma": {
@@ -17,6 +34,6 @@
         "esSpecCompliant": true
       }
     },
-    "max-classes-per-file": false
+    "triple-equals": true
   }
 }
