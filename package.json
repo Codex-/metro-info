@@ -2,7 +2,7 @@
   "name": "metro-info",
   "version": "0.0.1",
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npm run tsc",
     "clean": "rimraf ./dist",
@@ -31,6 +31,9 @@
   },
   "homepage": "https://github.com/Codex-/metro-info#readme",
   "dependencies": {
+    "@types/request-promise-native": "^1.0.15",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
     "xml-js": "^1.6.9"
   },
   "devDependencies": {

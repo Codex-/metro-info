@@ -1,3 +1,6 @@
 import { fetchPlatform } from './platformApi';
 
-fetchPlatform(1301);
+(async () => {
+  // tslint:disable-next-line:no-console
+  console.log(await fetchPlatform(1301));
+})();
