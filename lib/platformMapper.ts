@@ -1,22 +1,46 @@
 import { ElementCompact } from 'xml-js';
-import { Alert, Destination, Platform, Route, Trip } from './models';
+import {
+  Alert,
+  Content,
+  Destination,
+  Platform,
+  Route,
+  Trip,
+} from './models/position';
 
-export function mapToPlatform(platformJson: ElementCompact): Platform {
+// TODO add defense around bad number and date/time strings
+
+export function mapToPosition(positionJson: ElementCompact): Platform {
+  const position: ElementCompact = positionJson.JPRoutePositionET2;
+
   return {
-    alerts: (platformJson.Alert || []).map(mapToAlert),
-    name: platformJson.$.Name,
-    routes: (platformJson.Route || []).map(mapToRoute),
-    tag: parseInt(platformJson.$.PlatformTag, 10),
+    alerts: (positionJson.Alert && Array.isArray(positionJson.Alert)
+      ? positionJson.Alert
+      : positionJson.Alert || []
+    ).map(mapToAlert),
+    content: mapToContent(position.Content),
+    // name: positionJson.$.Name,
+    // routes: (positionJson.Route || []).map(mapToRoute),
+    // tag: parseInt(positionJson.$.PlatformTag, 10),
   };
 }
 
 function mapToAlert(alertJson: ElementCompact): Alert {
   return {
-    detail: alertJson.Detail,
+    detail: alertJson.Detail._text,
+    new: true,
     number: alertJson.Route.$.RouteNo,
+    routes: [],
     title: alertJson.$.Title,
     validFrom: new Date(alertJson.$.ValidFrom),
     validTo: new Date(alertJson.$.ValidTo),
+  };
+}
+
+function mapToContent(contentJson: ElementCompact): Content {
+  return {
+    expires: new Date(contentJson.$.Expires),
+    maxArrivalScope: parseInt(contentJson.$.MaxArrivalScope, 10),
   };
 }
 
@@ -38,7 +62,7 @@ function mapToDestination(destinationJson: ElementCompact): Destination {
 function mapToTrip(tripJson: ElementCompact): Trip {
   return {
     eta: tripJson.$.ETA,
-    number: tripJson.$.TripNo,
+    id: tripJson.$.TripNo,
     wheelchairAccess: tripJson.$.WheelchairAccess,
   };
 }
