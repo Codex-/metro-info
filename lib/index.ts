@@ -1,14 +1,34 @@
 import { ElementCompact } from 'xml-js';
-import { fetchPlatformAsJson } from './api/platformTimes';
-import { mapToPosition } from './mappers/platformTimes';
-import { Platform } from './models/platformTimes';
+import { fetchPlatformLocationsAsJson } from './api/platformLocations';
+import { fetchPlatformTimesAsJson } from './api/platformTimes';
+import { mapToPlatformLocations } from './mappers/platformLocations';
+import { mapToPlatformTimes } from './mappers/platformTimes';
+import { PlatformLocations } from './models/platformLocations';
+import { PlatformTimes } from './models/platformTimes';
 
 (async () => {
-  const platformJson = await fetchPlatformAsJson(3350);
+  const platformJson = await fetchPlatformTimesAsJson(3350);
   // tslint:disable-next-line:no-console
   console.log('%j', platformJson);
 
-  const platform: Platform = mapToPosition(platformJson as ElementCompact);
+  const platformTimes: PlatformTimes = mapToPlatformTimes(
+    platformJson as ElementCompact
+  );
   // tslint:disable-next-line:no-console
-  console.log('%j', platform);
+  console.log(platformTimes);
+
+  const platformLocationJson = (await fetchPlatformLocationsAsJson()) as ElementCompact;
+  // platformLocationJson.JPPlatforms.Platform = [
+  //   platformLocationJson.JPPlatforms.Platform[0],
+  // ];
+  // tslint:disable-next-line:no-console
+  console.log('%j', platformLocationJson);
+
+  const platformLocations: PlatformLocations = mapToPlatformLocations(
+    platformLocationJson as ElementCompact
+  );
+  // tslint:disable-next-line:no-console
+  console.log(platformLocations);
+  // tslint:disable-next-line:no-console
+  console.log(platformLocations.platforms[0].position);
 })();
