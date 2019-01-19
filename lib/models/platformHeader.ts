@@ -1,3 +1,7 @@
+/**
+ * Interfaces provided as an adaptation of the Connexionz schema.
+ */
+
 export interface PlatformHeader {
   /**
    * The common name of the platform defaulting to the nearest intersection.

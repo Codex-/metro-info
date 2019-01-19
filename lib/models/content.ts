@@ -1,4 +1,8 @@
 /**
+ * Interfaces provided as an adaptation of the Connexionz schema.
+ */
+
+/**
  * Information provided on the content of the original XML document.
  */
 export interface Content {

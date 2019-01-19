@@ -1,4 +1,8 @@
 /**
+ * Interfaces provided as an adaptation of the Connexionz schema.
+ */
+
+/**
  * Rider alert for a period. Gives warnings about issues on one or more routes.
  */
 export interface Alert {

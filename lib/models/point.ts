@@ -1,4 +1,8 @@
 /**
+ * Interfaces provided as an adaptation of the Connexionz schema.
+ */
+
+/**
  * Geo-coded location of platform in WGS84 format.
  */
 export interface Point {
