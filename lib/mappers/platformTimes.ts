@@ -5,7 +5,7 @@ import {
   Platform,
   Route,
   Trip,
-} from '../models/position';
+} from '../models/platformTimes';
 import { propertyToArray } from '../utils';
 import { mapToAlert } from './alert';
 

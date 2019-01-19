@@ -1,16 +1,11 @@
 import * as request from 'request-promise-native';
 import { ElementCompact, xml2js } from 'xml-js';
-
-const API_PLATFORM = 'JPRoutePositionET2';
-
-const API_URL_BASE = 'http://rtt.metroinfo.org.nz/rtt/public/utility/';
-const API_URL_GET = 'file.aspx?ContentType=SQLXML&Name=';
-const API_URL = `${API_URL_BASE}${API_URL_GET}`;
+import { API_POSITION, API_URL } from '../constants';
 
 export async function fetchPlatformAsJson(
   platformNumber: number
 ): Promise<ElementCompact | string> {
-  const getUrl = `${API_URL}${API_PLATFORM}&PlatformTag=${platformNumber}`;
+  const getUrl = `${API_URL}${API_POSITION}&PlatformTag=${platformNumber}`;
   try {
     const apiResponse: string = await request(getUrl).promise();
     const platformJson: ElementCompact = xml2js(apiResponse, {

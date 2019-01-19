@@ -1,7 +1,7 @@
 import { ElementCompact } from 'xml-js';
-import { mapToPosition } from './mappers/position';
-import { Platform } from './models/position';
-import { fetchPlatformAsJson } from './platformApi';
+import { fetchPlatformAsJson } from './api/platformTimes';
+import { mapToPosition } from './mappers/platformTimes';
+import { Platform } from './models/platformTimes';
 
 (async () => {
   const platformJson = await fetchPlatformAsJson(3350);

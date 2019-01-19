@@ -1,5 +1,3 @@
-import { Route } from './position';
-
 /**
  * Rider alert for a period. Gives warnings about issues on one or more routes.
  */
