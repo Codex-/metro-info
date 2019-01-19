@@ -1,30 +1,33 @@
 import { ElementCompact } from 'xml-js';
+import { API_TIMES } from '../constants';
 import {
-  Content,
   Destination,
-  Platform,
+  PlatformTimes,
   Route,
   Trip,
 } from '../models/platformTimes';
 import { propertyToArray } from '../utils';
 import { mapToAlert } from './alert';
+import { mapToContent } from './content';
 
-export function mapToPosition(positionJson: ElementCompact): Platform {
-  const platform: ElementCompact = positionJson.JPRoutePositionET2.Platform;
+export function mapToPlatformTimes(
+  positionJson: ElementCompact
+): PlatformTimes {
+  const platform: ElementCompact = positionJson[API_TIMES].Platform;
 
   return {
     alerts: propertyToArray(platform.Alert).map(mapToAlert),
-    content: mapToContent(positionJson.JPRoutePositionET2.Content),
+    content: mapToContent(positionJson[API_TIMES].Content),
     name: platform.$.Name,
     routes: propertyToArray(platform.Route).map(mapToRoute),
     tag: parseInt(platform.$.PlatformTag, 10),
   };
 }
 
-function mapToContent(contentJson: ElementCompact): Content {
+function mapToDestination(destinationJson: ElementCompact): Destination {
   return {
-    expires: new Date(contentJson.$.Expires),
-    maxArrivalScope: parseInt(contentJson.$.MaxArrivalScope, 10),
+    name: destinationJson.$.Name,
+    trips: propertyToArray(destinationJson.Trip).map(mapToTrip),
   };
 }
 
@@ -33,13 +36,6 @@ function mapToRoute(routeJson: ElementCompact): Route {
     destinations: propertyToArray(routeJson.Destination).map(mapToDestination),
     name: routeJson.$.Name,
     number: routeJson.$.RouteNo,
-  };
-}
-
-function mapToDestination(destinationJson: ElementCompact): Destination {
-  return {
-    name: destinationJson.$.Name,
-    trips: propertyToArray(destinationJson.Trip).map(mapToTrip),
   };
 }
 
