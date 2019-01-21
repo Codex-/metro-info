@@ -1,5 +1,5 @@
 import { ElementCompact } from 'xml-js';
-import { Content } from '../models/content';
+import { Content } from './content.model';
 
 export function mapToContent(contentJson: ElementCompact): Content {
   return {

@@ -1,6 +1,6 @@
-import { Content } from './content';
-import { PlatformHeader } from './platformHeader';
-import { Point } from './point';
+import { Content } from '../../content/content.model';
+import { Point } from '../../point/point.model';
+import { PlatformHeader } from '../header/platform.header.model';
 
 /**
  * Interfaces provided as an adaptation of the Connexionz schema.

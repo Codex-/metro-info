@@ -1,14 +1,14 @@
 import { ElementCompact } from 'xml-js';
-import { API_TIMES } from '../constants';
+import { mapToAlert } from '../../alert/alert.mapper';
+import { API_TIMES } from '../../constants';
+import { mapToContent } from '../../content/content.mapper';
+import { propertyToArray } from '../../utils';
 import {
   Destination,
   PlatformTimes,
   Route,
   Trip,
-} from '../models/platformTimes';
-import { propertyToArray } from '../utils';
-import { mapToAlert } from './alert';
-import { mapToContent } from './content';
+} from './platform.times.model';
 
 export function mapToPlatformTimes(
   positionJson: ElementCompact
