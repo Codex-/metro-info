@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es5",
     "module": "commonjs",
     "declaration": true,
     "sourceMap": true,
@@ -8,7 +8,12 @@
     "pretty": true,
 
     "strict": true,
-    "removeComments": true
+    "removeComments": true,
+
+    "lib": [
+      "es5",
+      "es2015.promise"
+    ]
   },
   "include": [
     "lib/**/*.ts"
