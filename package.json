@@ -1,6 +1,6 @@
 {
   "name": "metro-info",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
   "main": "dist/index.js",
   "scripts": {
@@ -8,11 +8,16 @@
     "clean": "rimraf ./dist",
     "format": "prettier --write \"lib/**/*.{ts,js}\"",
     "lint": "tslint -p tsconfig.json",
+    "postversion" : "git push && git push --tags",
     "prebuild": "npm run clean && npm run lint && npm run format",
+    "prepublishOnly": "npm run lint && npm run format",
+    "preversion": "npm run lint && npm run format",
     "test": "jest",
     "tsc": "tsc -p tsconfig.json",
-    "tsc:watch": "npm run tsc -- --watch"
+    "tsc:watch": "npm run tsc -- --watch",
+    "version": "git add -A src"
   },
+  "files": ["dist/**/*"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codex-/metro-info.git"
