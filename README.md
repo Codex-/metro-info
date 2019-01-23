@@ -1,6 +1,6 @@
 # metro-info
 
-![Build Status](https://img.shields.io/appveyor/ci/codex-/metro-info.svg?style=flat-square)
+![Build Status](https://img.shields.io/travis/Codex-/metro-info.svg?style=flat-square)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > 🚌 Simplified interaction with Christchurch's Metro Info bus service

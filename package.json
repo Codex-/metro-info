@@ -9,7 +9,7 @@
     "clean": "rimraf ./dist",
     "format": "prettier --write \"lib/**/*.{ts,js}\"",
     "lint": "tslint -p tsconfig.json",
-    "postversion" : "git push && git push --tags",
+    "postversion": "git push && git push --tags",
     "prebuild": "npm run clean && npm run lint && npm run format",
     "prepublishOnly": "npm run lint && npm run format",
     "preversion": "npm run lint && npm run format",
@@ -18,7 +18,9 @@
     "tsc:watch": "npm run tsc -- --watch",
     "version": "git add -A src"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codex-/metro-info.git"
@@ -37,6 +39,7 @@
   },
   "homepage": "https://github.com/Codex-/metro-info#readme",
   "dependencies": {
+    "@types/jest": "^23.3.13",
     "@types/request-promise-native": "^1.0.15",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
@@ -48,6 +51,7 @@
     "lint-staged": "^8.1.0",
     "prettier": "^1.16.0",
     "rimraf": "^2.6.3",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.17.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -67,6 +71,16 @@
     "*.js": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/lib/.*(test|spec))\\.(js|ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
     ]
   }
 }

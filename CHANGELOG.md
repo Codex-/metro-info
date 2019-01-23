@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Added CHANGELOG.
+- Added Jest testing.
+- Added travis config.
 - Fixed `types` property missing in package JSON.
 - Fixed tabs instead of spaces in tslint JSON.
+- Fixed shield in readme for build status.
 
 ## 1.0.0 - 2019-01-22
 ### Added
