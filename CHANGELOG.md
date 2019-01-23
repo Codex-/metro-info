@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `types` property missing in package JSON.
 - Fixed tabs instead of spaces in tslint JSON.
 - Fixed shield in readme for build status.
+- Fixed missing pretest step not running builds / linting / formatting before tests.
 
 ## 1.0.0 - 2019-01-22
 ### Added
