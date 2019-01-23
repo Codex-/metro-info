@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run tsc",
     "clean": "rimraf ./dist",

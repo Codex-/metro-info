@@ -33,17 +33,17 @@
       "avoid-escape",
       "avoid-template"
     ],
-		"trailing-comma": [
-			true,
-			{
-				"multiline": {
-					"objects": "always",
-					"array": "always"
-				},
-				"singleline": "never",
-				"esSpecCompliant": true
-			}
-		],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "always",
+          "array": "always"
+        },
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ],
     "triple-equals": true
   }
 }
