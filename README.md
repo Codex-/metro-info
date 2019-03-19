@@ -1,7 +1,7 @@
 # metro-info
 
 [![Build Status](https://img.shields.io/travis/Codex-/metro-info.svg?style=flat-square)](https://travis-ci.org/Codex-/metro-info)
-[![Code Coverage Status](https://img.shields.io/coveralls/github/codex-/metro-info.svg?style=flat-square)](https://coveralls.io/github/Codex-/metro-info)
+[![Code Coverage Status](https://img.shields.io/coveralls/github/Codex-/metro-info.svg?style=flat-square)](https://coveralls.io/github/Codex-/metro-info)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > 🚌 Simplified interaction with Christchurch's Metro Info bus service
