@@ -6,6 +6,7 @@
 
 # Jest
 .jest/
+/coverage
 
 # Package
 /dist
