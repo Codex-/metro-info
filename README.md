@@ -34,6 +34,10 @@ async function getLocations(): void {
 }
 ```
 
+## Compatibility
+
+`metro-info` will opt to use a globally provided `fetch` method if one exists, before falling back to using `node-fetch`. This allows compatibility with with any frameworks that implement `fetch`, such as: NativeScript, React Native, and most browsers.
+
 ## Models
 
 The models closely resemble those as exposed by the Connexionz API. The schema documentation was incredibly verbose, I have omitted commenting many items as a lot of the schema documentation simply reiterated the property name.
