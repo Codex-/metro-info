@@ -5,7 +5,7 @@
  * @returns an array of object(s) or an empty array if undefined.
  */
 export function propertyToArray(property: any): any[] {
-  if (!property) {
+  if (property === undefined) {
     return [];
   }
   return property && Array.isArray(property) ? property : [property];

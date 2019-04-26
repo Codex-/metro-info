@@ -18,8 +18,8 @@ describe('mapToAlert', () => {
       const alert: Alert = mapToAlert(singleAlertJson);
 
       expect(alert.detail).toEqual(singleAlertJson.Detail._text);
-      expect(alert.routes.length).toBe(1);
-      expect(alert.routes[0].number).toBe(singleAlertJson.Route.$.RouteNo);
+      expect(alert.routes.length).toEqual(1);
+      expect(alert.routes[0].number).toEqual(singleAlertJson.Route.$.RouteNo);
       expect(alert.title).toEqual(singleAlertJson.$.Title);
       expect(alert.validFrom).toBeInstanceOf(Date);
       expect(alert.validTo).toBeInstanceOf(Date);

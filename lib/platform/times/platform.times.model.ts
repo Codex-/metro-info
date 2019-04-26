@@ -41,10 +41,10 @@ export interface Trip {
   /**
    * Trip identifier as contained in GTFS dataset.
    */
-  id: number;
+  id?: number;
 
   /**
    * True when vehicle has wheelchair access.
    */
-  wheelchairAccess: boolean;
+  wheelchairAccess?: boolean;
 }

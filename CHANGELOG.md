@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Docstrings were being stripped due to a bad tsconfig setting.
+- Fixed a bug in Platform Times where a Trip ID would always be undefined.
+- Fixed `Trip` interface as `id` and `wheelchairAccess` are optional according to the schema.
 
 ## [1.0.4] - 2019-03-26
 
