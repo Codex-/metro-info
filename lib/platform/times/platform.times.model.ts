@@ -4,6 +4,8 @@ import { PlatformHeader } from '../header/platform.header.model';
 
 /**
  * Interfaces provided as an adaptation of the Connexionz schema.
+ *
+ * Schema: JPRoutePositionET2
  */
 
 export interface Destination {
@@ -23,6 +25,10 @@ export interface PlatformTimes extends PlatformHeader {
 export interface Route {
   destinations: Destination[];
   name: string;
+
+  /**
+   * Route numbers can be letters or numbers.
+   */
   number: string;
 }
 
@@ -37,5 +43,8 @@ export interface Trip {
    */
   id: number;
 
+  /**
+   * True when vehicle has wheelchair access.
+   */
   wheelchairAccess: boolean;
 }

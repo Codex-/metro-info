@@ -1,5 +1,7 @@
 /**
  * Interfaces provided as an adaptation of the Connexionz schema.
+ *
+ * Schema: Content
  */
 
 /**

@@ -4,6 +4,8 @@ import { PlatformHeader } from '../header/platform.header.model';
 
 /**
  * Interfaces provided as an adaptation of the Connexionz schema.
+ *
+ * Schema: JPPlatforms
  */
 
 /**
@@ -11,7 +13,6 @@ import { PlatformHeader } from '../header/platform.header.model';
  */
 export interface PlatformLocations {
   content: Content;
-
   platforms: Platform[];
 }
 
