@@ -17,9 +17,9 @@ export interface Destination {
  * Arrival information at a given platform including service alerts.
  */
 export interface PlatformTimes extends PlatformHeader {
-  alerts?: Alert[];
+  alerts: Alert[];
   content: Content;
-  routes?: Route[];
+  routes: Route[];
 }
 
 export interface Route {
