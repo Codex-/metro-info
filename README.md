@@ -48,5 +48,5 @@ If you encounter a case where an exception is thrown while parsing the XML respo
 
 ## TODO
 
-- Testing of the mappers.
-- Explore other schema types to expose from the official MetroInfo API.
+- [ ] Explore other schema types to expose from the official MetroInfo API.
+- [x] Testing of the mappers.
