@@ -1,6 +1,6 @@
 {
   "name": "metro-info",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/Codex-/metro-info#readme",
   "dependencies": {
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.4.1",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
