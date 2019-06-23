@@ -45,8 +45,3 @@ The models closely resemble those as exposed by the Connexionz API. The schema d
 ## Issues
 
 If you encounter a case where an exception is thrown while parsing the XML response, please raise an issue including the XML that caused the failure and I will investigate the cause.
-
-## TODO
-
-- [ ] Explore other schema types to expose from the official MetroInfo API.
-- [x] Testing of the mappers.

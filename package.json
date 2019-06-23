@@ -42,23 +42,23 @@
   },
   "homepage": "https://github.com/Codex-/metro-info#readme",
   "dependencies": {
-    "node-fetch": "^2.4.1",
+    "node-fetch": "^2.6.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/node-fetch": "^2.3.3",
+    "@types/jest": "^24.0.15",
+    "@types/node-fetch": "^2.3.7",
     "coveralls": "*",
-    "husky": "^2.1.0",
-    "jest": "^24.7.1",
-    "lint-staged": "^8.1.5",
-    "prettier": "^1.17.0",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.16.0",
+    "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.2"
   },
   "husky": {
     "hooks": {
