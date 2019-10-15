@@ -25,10 +25,16 @@ jobs:
         npm run build
     - name: Test
       run: |
-        npm run coverage-test
+        npm run coverage
     - name: Coveralls
       uses: coverallsapp/github-action@v1.0.1
       with:
           github-token: ${{ secrets.github_token }}
+    - name: Format
+      run: |
+        npm run format-check
+    - name: Lint
+      run: |
+        npm run lint
       env:
         CI: true

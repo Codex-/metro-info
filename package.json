@@ -7,20 +7,20 @@
   "scripts": {
     "build": "npm run tsc",
     "clean": "rimraf ./dist",
-    "coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "coverage-test": "jest --coverage --coverageReporters=lcov",
-    "format": "prettier --write \"lib/**/*.{ts,js}\"",
+    "coverage": "jest --coverage --coverageReporters=lcov",
+    "format": "npm run format-check -- --write",
+    "format-check": "prettier --check \"lib/**/*.{ts,js}\"",
     "lint": "tslint -p tsconfig.json",
+    "posttest": "npm run lint && npm run format-check",
     "postversion": "git push && git push --tags",
-    "prebuild": "npm run clean && npm run format && npm run lint",
+    "prebuild": "npm run clean",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run format && npm run lint",
-    "pretest": "npm run format && npm run lint",
-    "preversion": "npm run format && npm run lint",
+    "prepublishOnly": "npm run format-check && npm run lint",
+    "preversion": "npm run format-check && npm run lint",
     "test": "jest",
     "tsc": "tsc -p tsconfig.json",
     "tsc:watch": "npm run tsc -- --watch",
-    "version": "npm run format && git add -A src"
+    "version": "npm run format-check && git add -A src"
   },
   "files": [
     "dist/**/*"
@@ -49,7 +49,6 @@
   "devDependencies": {
     "@types/jest": "^24.0.19",
     "@types/node-fetch": "^2.5.2",
-    "coveralls": "*",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "lint-staged": "^9.4.2",
