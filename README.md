@@ -1,6 +1,6 @@
 # metro-info
 
-[![Build Status](https://github.com/Codex-/metro-info/workflows/Node%20CI/badge.svg)](https://github.com/Codex-/metro-info/actions?workflow=Node+CI)
+[![Build Status](https://img.shields.io/github/workflow/status/Codex-/metro-info/Node%20CI.svg?style=flat-square)](https://github.com/Codex-/metro-info/actions?workflow=Node+CI)
 [![Code Coverage Status](https://img.shields.io/coveralls/github/Codex-/metro-info.svg?style=flat-square)](https://coveralls.io/github/Codex-/metro-info)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
