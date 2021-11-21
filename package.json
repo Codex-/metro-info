@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/Codex-/metro-info#readme",
   "dependencies": {
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
