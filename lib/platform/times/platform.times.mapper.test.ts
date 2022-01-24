@@ -1,12 +1,12 @@
-import { mapToPlatformTimes } from './platform.times.mapper';
+import { mapToPlatformTimes } from "./platform.times.mapper";
 import {
   Destination,
   PlatformTimes,
   Route,
   Trip,
-} from './platform.times.model';
+} from "./platform.times.model";
 
-describe('mapToPlatformTimes', () => {
+describe("mapToPlatformTimes", () => {
   let platformTimesJson: any;
 
   function assertDestinations(
@@ -45,7 +45,7 @@ describe('mapToPlatformTimes', () => {
       expect(mappedTrip.id).toEqual(parseInt(originalTrip.$.TripID, 10));
       expect(mappedTrip.wheelchairAccess).toEqual(
         originalTrip.$.WheelchairAccess
-          ? originalTrip.$.WheelchairAccess === 'true'
+          ? originalTrip.$.WheelchairAccess === "true"
           : undefined
       );
     }
@@ -53,74 +53,74 @@ describe('mapToPlatformTimes', () => {
 
   beforeEach(() => {
     platformTimesJson = {
-      _declaration: { $: { version: '1.0', encoding: 'utf-8' } },
+      _declaration: { $: { version: "1.0", encoding: "utf-8" } },
       JPRoutePositionET2: {
         $: {
-          xmlns: 'urn:connexionz-co-nz:jp',
-          'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
-          'xsi:schemaLocation': 'urn:connexionz-co-nz:jp JourneyPlanner.xsd',
+          xmlns: "urn:connexionz-co-nz:jp",
+          "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+          "xsi:schemaLocation": "urn:connexionz-co-nz:jp JourneyPlanner.xsd",
         },
         Content: {
-          $: { Expires: '2019-04-26T23:34:31+12:00', MaxArrivalScope: '60' },
+          $: { Expires: "2019-04-26T23:34:31+12:00", MaxArrivalScope: "60" },
         },
         Platform: {
           $: {
-            PlatformTag: '1499',
-            Name: 'Westfield (temporary)',
-            PlatformNo: '1',
+            PlatformTag: "1499",
+            Name: "Westfield (temporary)",
+            PlatformNo: "1",
           },
           Route: [
             {
-              $: { RouteNo: 'Oa', Name: 'Orbiter' },
+              $: { RouteNo: "Oa", Name: "Orbiter" },
               Destination: {
-                $: { Name: 'Orbiter via Barrington' },
+                $: { Name: "Orbiter via Barrington" },
                 Trip: [
                   {
                     $: {
-                      ETA: '10',
-                      TripID: '3046',
-                      WheelchairAccess: 'true',
+                      ETA: "10",
+                      TripID: "3046",
+                      WheelchairAccess: "true",
                     },
                   },
                   {
                     $: {
-                      ETA: '41',
-                      TripID: '3065',
-                      WheelchairAccess: 'true',
+                      ETA: "41",
+                      TripID: "3065",
+                      WheelchairAccess: "true",
                     },
                   },
                 ],
               },
             },
             {
-              $: { RouteNo: 'Y', Name: 'Yellow Line' },
+              $: { RouteNo: "Y", Name: "Yellow Line" },
               Destination: {
-                $: { Name: 'New Brighton via City' },
+                $: { Name: "New Brighton via City" },
                 Trip: {
-                  $: { ETA: '5', TripID: '1261', WheelchairAccess: 'true' },
+                  $: { ETA: "5", TripID: "1261", WheelchairAccess: "true" },
                 },
               },
             },
           ],
           Alert: {
             $: {
-              ValidFrom: '2017-12-19',
-              ValidTo: '2019-12-25',
-              Title: 'Notification',
+              ValidFrom: "2017-12-19",
+              ValidTo: "2019-12-25",
+              Title: "Notification",
             },
             Detail: {
               _text:
-                'Express trip rules - Buses travelling to the city do not pick up after Denton Park, Hornby (drop offs only). Buses travelling to Rolleston do not drop off before the Hub Hornby (pick ups only).',
+                "Express trip rules - Buses travelling to the city do not pick up after Denton Park, Hornby (drop offs only). Buses travelling to Rolleston do not drop off before the Hub Hornby (pick ups only).",
             },
-            Route: { $: { RouteNo: 'Y' } },
+            Route: { $: { RouteNo: "Y" } },
           },
         },
       },
     };
   });
 
-  describe('for valid platform times json', () => {
-    it('maps platform times', () => {
+  describe("for valid platform times json", () => {
+    it("maps platform times", () => {
       // TODO: Remove cast when typings resolved.
       // https://github.com/nashwaan/xml-js/issues/105
       const platformTimes: PlatformTimes = mapToPlatformTimes(
@@ -128,7 +128,7 @@ describe('mapToPlatformTimes', () => {
       );
 
       expect(Array.isArray(platformTimes.alerts)).toBe(true);
-      expect(typeof platformTimes.content).toBe('object');
+      expect(typeof platformTimes.content).toBe("object");
       expect(platformTimes.name).toEqual(
         platformTimesJson.JPRoutePositionET2.Platform.$.Name
       );
@@ -143,7 +143,7 @@ describe('mapToPlatformTimes', () => {
       );
     });
 
-    it('maps platform times when source JSON has no number', () => {
+    it("maps platform times when source JSON has no number", () => {
       delete platformTimesJson.JPRoutePositionET2.Platform.$.PlatformNo;
       // TODO: Remove cast when typings resolved.
       // https://github.com/nashwaan/xml-js/issues/105
@@ -154,13 +154,13 @@ describe('mapToPlatformTimes', () => {
       expect(platformTimes.number).toEqual(undefined);
     });
 
-    it('maps routes when source JSON has only one route', () => {
+    it("maps routes when source JSON has only one route", () => {
       platformTimesJson.JPRoutePositionET2.Platform.Route = {
-        $: { RouteNo: 'Y', Name: 'Yellow Line' },
+        $: { RouteNo: "Y", Name: "Yellow Line" },
         Destination: {
-          $: { Name: 'New Brighton via City' },
+          $: { Name: "New Brighton via City" },
           Trip: {
-            $: { ETA: '5', TripID: '1261', WheelchairAccess: 'true' },
+            $: { ETA: "5", TripID: "1261", WheelchairAccess: "true" },
           },
         },
       };
@@ -173,7 +173,7 @@ describe('mapToPlatformTimes', () => {
       ]);
     });
 
-    it('maps routes when source JSON has multiple routes', () => {
+    it("maps routes when source JSON has multiple routes", () => {
       const platformTimes = mapToPlatformTimes(platformTimesJson);
 
       expect(Array.isArray(platformTimes.routes)).toBe(true);
@@ -184,13 +184,13 @@ describe('mapToPlatformTimes', () => {
       );
     });
 
-    it('maps destinations when source JSON has only one destination', () => {
+    it("maps destinations when source JSON has only one destination", () => {
       platformTimesJson.JPRoutePositionET2.Platform.Route = {
-        $: { RouteNo: 'Y', Name: 'Yellow Line' },
+        $: { RouteNo: "Y", Name: "Yellow Line" },
         Destination: {
-          $: { Name: 'New Brighton via City' },
+          $: { Name: "New Brighton via City" },
           Trip: {
-            $: { ETA: '5', TripID: '1261', WheelchairAccess: 'true' },
+            $: { ETA: "5", TripID: "1261", WheelchairAccess: "true" },
           },
         },
       };
@@ -204,7 +204,7 @@ describe('mapToPlatformTimes', () => {
       }
     });
 
-    it('maps destinations when source JSON has multiple destinations', () => {
+    it("maps destinations when source JSON has multiple destinations", () => {
       const platformRoutes = mapToPlatformTimes(platformTimesJson).routes;
       const originalRoutes =
         platformTimesJson.JPRoutePositionET2.Platform.Route;
@@ -221,13 +221,13 @@ describe('mapToPlatformTimes', () => {
       }
     });
 
-    it('maps trips when source JSON has only one trip', () => {
+    it("maps trips when source JSON has only one trip", () => {
       platformTimesJson.JPRoutePositionET2.Platform.Route = {
-        $: { RouteNo: 'Y', Name: 'Yellow Line' },
+        $: { RouteNo: "Y", Name: "Yellow Line" },
         Destination: {
-          $: { Name: 'New Brighton via City' },
+          $: { Name: "New Brighton via City" },
           Trip: {
-            $: { ETA: '5', TripID: '1261', WheelchairAccess: 'true' },
+            $: { ETA: "5", TripID: "1261", WheelchairAccess: "true" },
           },
         },
       };
@@ -240,7 +240,7 @@ describe('mapToPlatformTimes', () => {
       ]);
     });
 
-    it('maps trips when source JSON has multiple trips', () => {
+    it("maps trips when source JSON has multiple trips", () => {
       const platformRoutes = mapToPlatformTimes(platformTimesJson).routes;
       const trips = platformRoutes[0].destinations[0].trips;
 
@@ -251,13 +251,13 @@ describe('mapToPlatformTimes', () => {
       );
     });
 
-    it('maps trips with no TripID', () => {
+    it("maps trips with no TripID", () => {
       platformTimesJson.JPRoutePositionET2.Platform.Route = {
-        $: { RouteNo: 'Y', Name: 'Yellow Line' },
+        $: { RouteNo: "Y", Name: "Yellow Line" },
         Destination: {
-          $: { Name: 'New Brighton via City' },
+          $: { Name: "New Brighton via City" },
           Trip: {
-            $: { ETA: '5', WheelchairAccess: 'true' },
+            $: { ETA: "5", WheelchairAccess: "true" },
           },
         },
       };
@@ -269,17 +269,17 @@ describe('mapToPlatformTimes', () => {
       expect(trip.eta).toBe(parseInt(originalTrip.$.ETA, 10));
       expect(trip.id).toBe(undefined);
       expect(trip.wheelchairAccess).toBe(
-        originalTrip.$.WheelchairAccess === 'true'
+        originalTrip.$.WheelchairAccess === "true"
       );
     });
 
-    it('maps trips with no WheelchairAccess', () => {
+    it("maps trips with no WheelchairAccess", () => {
       platformTimesJson.JPRoutePositionET2.Platform.Route = {
-        $: { RouteNo: 'Y', Name: 'Yellow Line' },
+        $: { RouteNo: "Y", Name: "Yellow Line" },
         Destination: {
-          $: { Name: 'New Brighton via City' },
+          $: { Name: "New Brighton via City" },
           Trip: {
-            $: { ETA: '5', TripID: '1261' },
+            $: { ETA: "5", TripID: "1261" },
           },
         },
       };

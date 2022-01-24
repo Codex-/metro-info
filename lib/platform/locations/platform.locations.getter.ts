@@ -1,7 +1,7 @@
-import { ElementCompact } from 'xml-js';
-import { fetchPlatformLocationsAsJson } from './platform.locations.api';
-import { mapToPlatformLocations } from './platform.locations.mapper';
-import { PlatformLocations } from './platform.locations.model';
+import { ElementCompact } from "xml-js";
+import { fetchPlatformLocationsAsJson } from "./platform.locations.api";
+import { mapToPlatformLocations } from "./platform.locations.mapper";
+import { PlatformLocations } from "./platform.locations.model";
 
 /**
  * Fetch all Platform locations from the MetroInfo API.

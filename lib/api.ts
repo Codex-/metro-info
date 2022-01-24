@@ -1,11 +1,11 @@
-import { ElementCompact, xml2js } from 'xml-js';
+import { ElementCompact, xml2js } from "xml-js";
 
 if (
-  typeof (global as any).fetch === 'undefined' &&
-  typeof window.fetch === 'undefined'
+  typeof (global as any).fetch === "undefined" &&
+  typeof window.fetch === "undefined"
 ) {
   // tslint:disable-next-line: no-var-requires no-implicit-dependencies
-  (global as any).fetch = require('node-fetch');
+  (global as any).fetch = require("node-fetch");
 }
 
 const fetch = (global as any).fetch || window.fetch;
@@ -15,7 +15,7 @@ export async function fetchXmlAsJson(uri: string): Promise<ElementCompact> {
   const apiText: string = await apiResponse.text();
 
   return xml2js(apiText, {
-    attributesKey: '$',
+    attributesKey: "$",
     compact: true,
     nativeType: true,
   });

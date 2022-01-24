@@ -1,19 +1,19 @@
-import { mapToAlert } from './alert.mapper';
-import { Alert } from './alert.model';
+import { mapToAlert } from "./alert.mapper";
+import { Alert } from "./alert.model";
 
-describe('mapToAlert', () => {
-  describe('for valid alert json', () => {
-    it('maps a single alert', () => {
+describe("mapToAlert", () => {
+  describe("for valid alert json", () => {
+    it("maps a single alert", () => {
       const singleAlertJson = {
         $: {
-          ValidFrom: '2017-12-19',
-          ValidTo: '2019-12-25',
-          Title: 'Notification',
+          ValidFrom: "2017-12-19",
+          ValidTo: "2019-12-25",
+          Title: "Notification",
         },
         Detail: {
-          _text: 'Express trip rules',
+          _text: "Express trip rules",
         },
-        Route: { $: { RouteNo: 'Y' } },
+        Route: { $: { RouteNo: "Y" } },
       };
       const alert: Alert = mapToAlert(singleAlertJson);
 

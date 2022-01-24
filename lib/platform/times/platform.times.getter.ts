@@ -1,7 +1,7 @@
-import { ElementCompact } from 'xml-js';
-import { fetchPlatformTimesAsJson } from './platform.times.api';
-import { mapToPlatformTimes } from './platform.times.mapper';
-import { PlatformTimes } from './platform.times.model';
+import { ElementCompact } from "xml-js";
+import { fetchPlatformTimesAsJson } from "./platform.times.api";
+import { mapToPlatformTimes } from "./platform.times.mapper";
+import { PlatformTimes } from "./platform.times.model";
 
 /**
  * Fetch all Platform times for a given platform from the MetroInfo API.

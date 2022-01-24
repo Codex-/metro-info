@@ -10,19 +10,19 @@
  * Perceived direction from the start to the end of the route pattern.
  */
 export enum Direction {
-  AC = 'Anti-Clockwise',
-  CC = 'Counterclockwise',
-  CL = 'Clockwise',
-  DN = 'Down',
-  EB = 'Eastbound',
-  IB = 'Inbound',
-  IW = 'Inward',
-  NB = 'Northbound',
-  OB = 'Outbound',
-  OW = 'Outward',
-  SB = 'Southbound',
-  UP = 'Up',
-  WB = 'Westbound',
+  AC = "Anti-Clockwise",
+  CC = "Counterclockwise",
+  CL = "Clockwise",
+  DN = "Down",
+  EB = "Eastbound",
+  IB = "Inbound",
+  IW = "Inward",
+  NB = "Northbound",
+  OB = "Outbound",
+  OW = "Outward",
+  SB = "Southbound",
+  UP = "Up",
+  WB = "Westbound",
 }
 
 /**

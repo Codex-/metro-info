@@ -1,6 +1,6 @@
-import { ElementCompact } from 'xml-js';
-import { propertyToArray } from '../utils';
-import { Alert, AlertRoute } from './alert.model';
+import { ElementCompact } from "xml-js";
+import { propertyToArray } from "../utils";
+import { Alert, AlertRoute } from "./alert.model";
 
 export function mapToAlert(alertJson: ElementCompact): Alert {
   return {

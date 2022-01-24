@@ -1,6 +1,6 @@
-import { ElementCompact } from 'xml-js';
-import { fetchXmlAsJson } from '../../api';
-import { API_TIMES, API_URL } from '../../constants';
+import { ElementCompact } from "xml-js";
+import { fetchXmlAsJson } from "../../api";
+import { API_TIMES, API_URL } from "../../constants";
 
 export async function fetchPlatformTimesAsJson(
   platformNumber: number

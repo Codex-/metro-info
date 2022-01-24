@@ -1,14 +1,14 @@
-import { ElementCompact } from 'xml-js';
-import { mapToAlert } from '../../alert/alert.mapper';
-import { API_TIMES } from '../../constants';
-import { mapToContent } from '../../content/content.mapper';
-import { propertyToArray } from '../../utils';
+import { ElementCompact } from "xml-js";
+import { mapToAlert } from "../../alert/alert.mapper";
+import { API_TIMES } from "../../constants";
+import { mapToContent } from "../../content/content.mapper";
+import { propertyToArray } from "../../utils";
 import {
   Destination,
   PlatformTimes,
   Route,
   Trip,
-} from './platform.times.model';
+} from "./platform.times.model";
 
 export function mapToPlatformTimes(
   positionJson: ElementCompact
@@ -47,7 +47,7 @@ function mapToTrip(tripJson: ElementCompact): Trip {
     eta: parseInt(tripJson.$.ETA, 10),
     id: tripJson.$.TripID ? parseInt(tripJson.$.TripID, 10) : undefined,
     wheelchairAccess: tripJson.$.WheelchairAccess
-      ? tripJson.$.WheelchairAccess === 'true'
+      ? tripJson.$.WheelchairAccess === "true"
       : undefined,
   };
 }

@@ -1,6 +1,6 @@
-import { Alert } from '../../alert/alert.model';
-import { Content } from '../../content/content.model';
-import { PlatformHeader } from '../header/platform.header.model';
+import { Alert } from "../../alert/alert.model";
+import { Content } from "../../content/content.model";
+import { PlatformHeader } from "../header/platform.header.model";
 
 /**
  * Interfaces provided as an adaptation of the Connexionz schema.

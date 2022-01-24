@@ -1,9 +1,9 @@
-import { ElementCompact } from 'xml-js';
-import { API_LOCATIONS } from '../../constants';
-import { mapToContent } from '../../content/content.mapper';
-import { mapToPoint } from '../../point/point.mapper';
-import { propertyToArray } from '../../utils';
-import { Platform, PlatformLocations } from './platform.locations.model';
+import { ElementCompact } from "xml-js";
+import { API_LOCATIONS } from "../../constants";
+import { mapToContent } from "../../content/content.mapper";
+import { mapToPoint } from "../../point/point.mapper";
+import { propertyToArray } from "../../utils";
+import { Platform, PlatformLocations } from "./platform.locations.model";
 
 /**
  * This is due to an inconsistency between the schema design and the returned XML.
