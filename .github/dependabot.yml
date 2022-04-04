@@ -1,25 +1,6 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "17:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: "@types/node-fetch"
-    versions:
-    - 2.5.10
-    - 2.5.9
-  - dependency-name: y18n
-    versions:
-    - 4.0.1
-    - 4.0.2
-  - dependency-name: husky
-    versions:
-    - 4.3.8
-    - 5.1.1
-    - 5.1.2
-  - dependency-name: typescript
-    versions:
-    - 3.9.8
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
