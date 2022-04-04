@@ -1,47 +1,29 @@
 {
   "name": "metro-info",
   "version": "1.0.9",
+  "author": "Alex Miller <codex.nz@gmail.com>",
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "clean": "rimraf ./dist",
-    "coverage": "jest --coverage --coverageReporters=lcov",
-    "format": "npm run format-check -- --write",
-    "format-check": "prettier --check \"lib/**/*.{ts,js}\"",
-    "lint": "tslint -p tsconfig.json",
-    "posttest": "npm run lint && npm run format-check",
-    "postversion": "git push && git push --tags",
-    "prebuild": "npm run clean",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run format-check && npm run lint",
-    "preversion": "npm run format-check && npm run lint",
-    "test": "jest",
-    "tsc": "tsc -p tsconfig.json",
-    "tsc:watch": "npm run tsc -- --watch",
-    "version": "npm run format-check && git add -A src"
-  },
-  "files": [
-    "dist/**/*"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codex-/metro-info.git"
   },
-  "keywords": [
-    "bus",
-    "metro",
-    "metroinfo",
-    "connections",
-    "api"
-  ],
-  "author": "Alex Miller <codex.nz@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Codex-/metro-info/issues"
   },
   "homepage": "https://github.com/Codex-/metro-info#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format:check": "prettier --check \"{**/*,*}.{js,ts}\"",
+    "format:write": "npm run format:check -- --write",
+    "lint": "eslint --ext \".js,.ts\" .",
+    "test": "jest"
+  },
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "node-fetch": "^3.2.3",
     "xml-js": "^1.6.11"
@@ -58,9 +40,15 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.2",
-    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
-  }
+  },
+  "keywords": [
+    "bus",
+    "metro",
+    "metroinfo",
+    "connections",
+    "api"
+  ]
 }
