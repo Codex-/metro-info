@@ -1,6 +1,6 @@
 {
   "name": "metro-info",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "author": "Alex Miller <codex.nz@gmail.com>",
   "description": "Christchurch (Unofficial) MetroInfo API NodeJS library",
   "repository": {
