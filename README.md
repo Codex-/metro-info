@@ -1,14 +1,14 @@
 # metro-info
 
-[![Build Status](https://img.shields.io/github/workflow/status/Codex-/metro-info/Node%20CI.svg?style=flat-square)](https://github.com/Codex-/metro-info/actions?workflow=Node+CI)
-[![Code Coverage Status](https://img.shields.io/coveralls/github/Codex-/metro-info.svg?style=flat-square)](https://coveralls.io/github/Codex-/metro-info)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![build](https://github.com/Codex-/metro-info/actions/workflows/build.yml/badge.svg)](https://github.com/Codex-/metro-info/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/Codex-/metro-info/branch/main/graph/badge.svg?token=WWGNIPC249)](https://codecov.io/gh/Codex-/metro-info)
+[![npm](https://img.shields.io/npm/v/metro-info.svg)](https://www.npmjs.com/package/metro-info)
 
 > 🚌 Simplified interaction with Christchurch's Metro Info bus service
 
 ## Install
 
-```
+```shell
 npm install metro-info
 ```
 
@@ -17,7 +17,7 @@ npm install metro-info
 Getting times for a specific Platform can be achieved as per the example below.
 
 ```typescript
-import { getPlatformTimes, PlatformTimes } from 'metro-info';
+import { getPlatformTimes, PlatformTimes } from "metro-info";
 
 async function getTimes(): void {
   const platformTimes: PlatformTimes = await getPlatformTimes(1205);
@@ -27,7 +27,7 @@ async function getTimes(): void {
 If you're unsure of a Platform number, they can be found on the physical stops themselves or alternatively a complete collection of all Platforms with their locations, tags, and various other information can be obtained as per the example below.
 
 ```typescript
-import { getPlatformLocations, PlatformLocations } from 'metro-info';
+import { getPlatformLocations, PlatformLocations } from "metro-info";
 
 async function getLocations(): void {
   const platformLocations: PlatformLocations = await getPlatformLocations();
