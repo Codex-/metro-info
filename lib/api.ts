@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ElementCompact, xml2js } from "xml-js";
 
 if (

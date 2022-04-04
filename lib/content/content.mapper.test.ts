@@ -12,7 +12,7 @@ describe("mapToContent", () => {
       expect(content.expires).toBeInstanceOf(Date);
       expect(content.expires).toEqual(new Date(contentJson.$.Expires));
       expect(content.maxArrivalScope).toEqual(
-        parseInt(contentJson.$.MaxArrivalScope, 10)
+        parseInt(contentJson.$.MaxArrivalScope)
       );
     });
   });

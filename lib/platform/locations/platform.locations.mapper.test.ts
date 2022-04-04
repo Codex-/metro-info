@@ -81,6 +81,7 @@ describe("mapToPlatformLocations", () => {
       // TODO: Remove cast when typings resolved.
       // https://github.com/nashwaan/xml-js/issues/105
       const platformLocations: PlatformLocations = mapToPlatformLocations(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         platformLocationsJson as any
       );
 
@@ -101,12 +102,12 @@ describe("mapToPlatformLocations", () => {
         );
         expect(mappedPlatform.name).toEqual(originalPlatform.$.Name);
         expect(mappedPlatform.number).toEqual(
-          parseInt(originalPlatform.$.PlatformNo, 10)
+          parseInt(originalPlatform.$.PlatformNo)
         );
         expect(typeof mappedPlatform.position).toBe("object");
         expect(mappedPlatform.roadName).toEqual(originalPlatform.$.RoadName);
         expect(mappedPlatform.tag).toEqual(
-          parseInt(originalPlatform.$.PlatformTag, 10)
+          parseInt(originalPlatform.$.PlatformTag)
         );
       }
     });

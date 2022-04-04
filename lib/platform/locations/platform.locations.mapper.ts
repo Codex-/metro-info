@@ -25,10 +25,10 @@ function mapToPlatform(platformJson: ElementCompact): Platform {
   return {
     bearingToRoad: parseFloat(platformJson.$.BearingToRoad),
     name: platformJson.$.Name,
-    number: parseInt(platformJson.$.PlatformNo, 10),
+    number: parseInt(platformJson.$.PlatformNo),
     position: mapToPoint(platformJson.Position),
     roadName: platformJson.$.RoadName,
-    tag: parseInt(platformJson.$.PlatformTag, 10),
+    tag: parseInt(platformJson.$.PlatformTag),
     vehicleType: undefined,
   };
 }

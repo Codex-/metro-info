@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { mapToPlatformTimes } from "./platform.times.mapper";
 import {
   Destination,
@@ -41,8 +42,8 @@ describe("mapToPlatformTimes", () => {
       const mappedTrip = mappedTrips[i];
       const originalTrip = originalTrips[i];
 
-      expect(mappedTrip.eta).toEqual(parseInt(originalTrip.$.ETA, 10));
-      expect(mappedTrip.id).toEqual(parseInt(originalTrip.$.TripID, 10));
+      expect(mappedTrip.eta).toEqual(parseInt(originalTrip.$.ETA));
+      expect(mappedTrip.id).toEqual(parseInt(originalTrip.$.TripID));
       expect(mappedTrip.wheelchairAccess).toEqual(
         originalTrip.$.WheelchairAccess
           ? originalTrip.$.WheelchairAccess === "true"
@@ -133,13 +134,10 @@ describe("mapToPlatformTimes", () => {
         platformTimesJson.JPRoutePositionET2.Platform.$.Name
       );
       expect(platformTimes.number).toEqual(
-        parseInt(platformTimesJson.JPRoutePositionET2.Platform.$.PlatformNo, 10)
+        parseInt(platformTimesJson.JPRoutePositionET2.Platform.$.PlatformNo)
       );
       expect(platformTimes.tag).toEqual(
-        parseInt(
-          platformTimesJson.JPRoutePositionET2.Platform.$.PlatformTag,
-          10
-        )
+        parseInt(platformTimesJson.JPRoutePositionET2.Platform.$.PlatformTag)
       );
     });
 
@@ -266,7 +264,7 @@ describe("mapToPlatformTimes", () => {
       const originalTrip =
         platformTimesJson.JPRoutePositionET2.Platform.Route.Destination.Trip;
 
-      expect(trip.eta).toBe(parseInt(originalTrip.$.ETA, 10));
+      expect(trip.eta).toBe(parseInt(originalTrip.$.ETA));
       expect(trip.id).toBe(undefined);
       expect(trip.wheelchairAccess).toBe(
         originalTrip.$.WheelchairAccess === "true"

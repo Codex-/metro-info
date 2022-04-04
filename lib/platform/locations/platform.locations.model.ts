@@ -34,5 +34,5 @@ export interface Platform extends PlatformHeader {
    *
    * TODO: Not yet implemented.
    */
-  vehicleType?: any;
+  vehicleType?: unknown;
 }

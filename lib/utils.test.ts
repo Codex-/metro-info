@@ -21,6 +21,7 @@ describe("propertyToArray", () => {
   });
 
   it("returns the original parameter if it is already an empty array", () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const testArray: any[] = [];
     const array = propertyToArray(testArray);
 

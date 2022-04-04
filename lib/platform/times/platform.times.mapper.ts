@@ -19,11 +19,9 @@ export function mapToPlatformTimes(
     alerts: propertyToArray(platform.Alert).map(mapToAlert),
     content: mapToContent(positionJson[API_TIMES].Content),
     name: platform.$.Name,
-    number: platform.$.PlatformNo
-      ? parseInt(platform.$.PlatformNo, 10)
-      : undefined,
+    number: platform.$.PlatformNo ? parseInt(platform.$.PlatformNo) : undefined,
     routes: propertyToArray(platform.Route).map(mapToRoute),
-    tag: parseInt(platform.$.PlatformTag, 10),
+    tag: parseInt(platform.$.PlatformTag),
   };
 }
 
@@ -44,8 +42,8 @@ function mapToRoute(routeJson: ElementCompact): Route {
 
 function mapToTrip(tripJson: ElementCompact): Trip {
   return {
-    eta: parseInt(tripJson.$.ETA, 10),
-    id: tripJson.$.TripID ? parseInt(tripJson.$.TripID, 10) : undefined,
+    eta: parseInt(tripJson.$.ETA),
+    id: tripJson.$.TripID ? parseInt(tripJson.$.TripID) : undefined,
     wheelchairAccess: tripJson.$.WheelchairAccess
       ? tripJson.$.WheelchairAccess === "true"
       : undefined,
