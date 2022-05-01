@@ -1,7 +1,7 @@
 # metro-info
 
 [![build](https://github.com/Codex-/metro-info/actions/workflows/build.yml/badge.svg)](https://github.com/Codex-/metro-info/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/Codex-/metro-info/branch/main/graph/badge.svg?token=WWGNIPC249)](https://codecov.io/gh/Codex-/metro-info)
+[![codecov](https://codecov.io/gh/Codex-/metro-info/branch/master/graph/badge.svg?token=23X6AZ78BH)](https://codecov.io/gh/Codex-/metro-info)
 [![npm](https://img.shields.io/npm/v/metro-info.svg)](https://www.npmjs.com/package/metro-info)
 
 > 🚌 Simplified interaction with Christchurch's Metro Info bus service
